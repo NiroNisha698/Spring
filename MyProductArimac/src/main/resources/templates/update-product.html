@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-5">
+        <h3> Update Student</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-8">
+                    <form action="#" th:action="@{/products/update/{productID}(id=${product.productID})}" th:object="${product}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="productName" class="col-form-label">Name</label> <input type="text" th:field="*{productName}" class="form-control" id="productName" placeholder="Name"> <span th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="productPrice" class="col-form-label">Email</label> <input type="text" th:field="*{productPrice}" class="form-control" id="productPrice" placeholder="Email"> <span th:if="${#fields.hasErrors('productPrice')}" th:errors="*{productPrice}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="expiryDate" class="col-form-label">Phone No</label> <input type="text" th:field="*{expiryDate}" class="form-control" id="expiryDate" placeholder="phoneNo"> <span th:if="${#fields.hasErrors('expiryDate')}" th:errors="expiryDate" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-8">
+                                <input type="submit" class="btn btn-primary" value="Update Student">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
